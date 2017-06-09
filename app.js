@@ -8,7 +8,7 @@ function cookiesPerHour(store){
   for(var i = 0; i<store.hoursOpen.length; i++){
     store.averageCustomerHour = customerNumber(store.minCustomersHour, store.maxCustomersHour);
     console.log('Hour ' + (i + 1) + ' customers = ' + store.averageCustomerHour);
-    var cookies = (store.averageCustomerHour * store.averageCustomerCookies);
+    var cookies = Math.floor(store.averageCustomerHour * store.averageCustomerCookies);
     store.cookiesPurchasedHour.push(cookies);
     console.log('Hour ' + (i + 1) + ' cookies purchased = ' + store.cookiesPurchasedHour[i]);
   }
