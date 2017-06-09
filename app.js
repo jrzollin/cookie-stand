@@ -4,8 +4,22 @@ function customerNumber(min, max){
   return Math.floor(Math.random() * ((max + 1) - min)) + min;
 }
 
+function cookieTally(store){
+  cookiesPerHour(store);
+  cookiesTotal(store);
+}
+
+function cookiesTotal(store){
+  var totalCookies = 0;
+  for(var i = 0; i < store.hoursOpen.length; i++){
+    totalCookies = totalCookies + store.cookiesPurchasedHour[i];
+    console.log('Total cookies = ' + totalCookies);
+  }
+  return totalCookies;
+}
+
 function cookiesPerHour(store){
-  for(var i = 0; i<store.hoursOpen.length; i++){
+  for(var i = 0; i < store.hoursOpen.length; i++){
     store.averageCustomerHour = customerNumber(store.minCustomersHour, store.maxCustomersHour);
     console.log('Hour ' + (i + 1) + ' customers = ' + store.averageCustomerHour);
     var cookies = Math.floor(store.averageCustomerHour * store.averageCustomerCookies);
@@ -15,6 +29,7 @@ function cookiesPerHour(store){
 }
 
 var pikeStore = {
+  storeLocation: '1st and Pike',
   minCustomersHour: 23,
   maxCustomersHour: 65,
   averageCustomerHour: 0,
@@ -24,6 +39,7 @@ var pikeStore = {
 }
 
 var seaTacStore = {
+  storeLocation: 'SeaTac Airport',
   minCustomersHour: 3,
   maxCustomersHour: 24,
   averageCustomerHour: 0,
@@ -33,6 +49,7 @@ var seaTacStore = {
 }
 
 var seattleCenterStore = {
+  storeLocation: 'Seattle Center',
   minCustomersHour: 11,
   maxCustomersHour: 38,
   averageCustomerHour: 0,
@@ -42,6 +59,7 @@ var seattleCenterStore = {
 }
 
 var capitolHillStore = {
+  storeLocation: 'Capitol Hill',
   minCustomersHour: 20,
   maxCustomersHour: 38,
   averageCustomerHour: 0,
@@ -51,6 +69,7 @@ var capitolHillStore = {
 }
 
 var alkiStore = {
+  storeLocation: 'Alki',
   minCustomersHour: 2,
   maxCustomersHour: 16,
   averageCustomerHour: 0,
@@ -58,5 +77,3 @@ var alkiStore = {
   cookiesPurchasedHour: [],
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
 }
-
-cookiesPerHour(seaTacStore);
