@@ -16,6 +16,7 @@ function cookieTally(store){
   cookiesPerHour(store);
   cookiesTotal(store);
   allStoresHourTotal(store);
+  dailyTotalAll(store);
   printSales(store);
 }
 
@@ -87,6 +88,17 @@ function printHourAllStore(){
     newColumn.textContent = totalHourAll[i];
     rowEl.appendChild(newColumn);
   }
+
+  //pring total all
+  var columnTotal = document.createElement('td');
+  columnTotal.textContent = totalAll;
+  rowEl.appendChild(columnTotal);
+}
+
+function dailyTotalAll(store){
+  for(var i = 0; i < allStores.length; i++);{
+    totalAll = totalAll + store.totalCookies;
+  }
 }
 
 // function printSales(store){
@@ -127,6 +139,7 @@ function NewStore(storeLocation, minCustomersHour, maxCustomersHour, averageCust
 
 var allStores = [];
 var totalHourAll = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var totalAll = 0;
 
 var pikeStore = new NewStore('1st and Pike', 23, 65, 6.3);
 var seaTacStore = new NewStore('SeaTac Airport', 3, 24, 1.2);
