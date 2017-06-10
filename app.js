@@ -65,7 +65,7 @@ var pikeStore = {
   averageCustomerCookies: 6.3,
   cookiesPurchasedHour: [],
   totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
 }
 
 var seaTacStore = {
@@ -76,7 +76,7 @@ var seaTacStore = {
   averageCustomerCookies: 1.2,
   cookiesPurchasedHour: [],
   totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
 }
 
 var seattleCenterStore = {
@@ -87,7 +87,7 @@ var seattleCenterStore = {
   averageCustomerCookies: 3.7,
   cookiesPurchasedHour: [],
   totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
 }
 
 var capitolHillStore = {
@@ -98,7 +98,7 @@ var capitolHillStore = {
   averageCustomerCookies: 2.3,
   cookiesPurchasedHour: [],
   totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
 }
 
 var alkiStore = {
@@ -109,7 +109,7 @@ var alkiStore = {
   averageCustomerCookies: 4.6,
   cookiesPurchasedHour: [],
   totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
 }
 
 var allStores = [pikeStore, seaTacStore, seattleCenterStore, capitolHillStore, alkiStore];
