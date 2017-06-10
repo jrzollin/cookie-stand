@@ -15,7 +15,8 @@ function cookiesTotal(store){
     totalCookies = totalCookies + store.cookiesPurchasedHour[i];
     console.log('Total cookies = ' + totalCookies);
   }
-  return totalCookies;
+  store.totalCookies = totalCookies;
+  console.log(store.totalCookies);
 }
 
 function cookiesPerHour(store){
@@ -35,8 +36,16 @@ function printSales(store){
   var headerEl = document.createElement('h3');
   sectionEl.appendChild(headerEl);
   headerEl.textContent = store.storeLocation;
-  var storeEl = document.createElement('ul');
-  sectionEl.appendChild(storeEl);
+  var listEl = document.createElement('ul');
+  sectionEl.appendChild(listEl);
+  for(var i = 0; i < store.hoursOpen.length; i++){
+    var listItemEl = document.createElement('li');
+    listEl.appendChild(listItemEl);
+    listItemEl.textContent = store.hoursOpen[i] + ': ' + store.cookiesPurchasedHour[i] + ' cookies';
+  }
+  var listItemEl = document.createElement('li');
+  listEl.appendChild(listItemEl);
+  listItemEl.textContent = 'Total: ';
 }
 
 
@@ -48,6 +57,7 @@ var pikeStore = {
   averageCustomerHour: 0,
   averageCustomerCookies: 6.3,
   cookiesPurchasedHour: [],
+  totalCookies: 0,
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
 }
 
@@ -58,6 +68,7 @@ var seaTacStore = {
   averageCustomerHour: 0,
   averageCustomerCookies: 1.2,
   cookiesPurchasedHour: [],
+  totalCookies: 0,
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
 }
 
@@ -68,6 +79,7 @@ var seattleCenterStore = {
   averageCustomerHour: 0,
   averageCustomerCookies: 3.7,
   cookiesPurchasedHour: [],
+  totalCookies: 0,
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
 }
 
@@ -78,6 +90,7 @@ var capitolHillStore = {
   averageCustomerHour: 0,
   averageCustomerCookies: 2.3,
   cookiesPurchasedHour: [],
+  totalCookies: 0,
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
 }
 
@@ -88,10 +101,11 @@ var alkiStore = {
   averageCustomerHour: 0,
   averageCustomerCookies: 4.6,
   cookiesPurchasedHour: [],
+  totalCookies: 0,
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
 }
 
 
 cookieTally(pikeStore);
 printSales(pikeStore);
-printSales(seaTacStore);
+//printSales(seaTacStore);
