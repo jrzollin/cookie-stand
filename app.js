@@ -34,9 +34,9 @@ function printSales(store){
   document.body.appendChild(sectionEl);
   var headerEl = document.createElement('h3');
   sectionEl.appendChild(headerEl);
+  headerEl.textContent = store.storeLocation;
   var storeEl = document.createElement('ul');
   sectionEl.appendChild(storeEl);
-  console.log(storeEl);
 }
 
 
