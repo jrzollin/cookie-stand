@@ -40,9 +40,11 @@ function printSales(store){
   var sectionEl = document.createElement('section');
   sectionEl.setAttribute('class', 'store');
   document.body.appendChild(sectionEl);
+
   var headerEl = document.createElement('h3');
   sectionEl.appendChild(headerEl);
   headerEl.textContent = store.storeLocation;
+
   var listEl = document.createElement('ul');
   sectionEl.appendChild(listEl);
   for(var i = 0; i < store.hoursOpen.length; i++){
@@ -50,6 +52,7 @@ function printSales(store){
     listEl.appendChild(listItemEl);
     listItemEl.textContent = store.hoursOpen[i] + ': ' + store.cookiesPurchasedHour[i] + ' cookies';
   }
+  
   var listItemEl = document.createElement('li');
   listEl.appendChild(listItemEl);
   listItemEl.textContent = 'Total: ' + store.totalCookies + ' cookies';
