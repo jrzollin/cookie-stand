@@ -28,6 +28,19 @@ function cookiesPerHour(store){
   }
 }
 
+function printSales(store){
+  var sectionEl = document.createElement('section');
+  sectionEl.setAttribute('class', 'store');
+  document.body.appendChild(sectionEl);
+  var headerEl = document.createElement('h3');
+  sectionEl.appendChild(headerEl);
+  var storeEl = document.createElement('ul');
+  sectionEl.appendChild(storeEl);
+  console.log(storeEl);
+}
+
+
+
 var pikeStore = {
   storeLocation: '1st and Pike',
   minCustomersHour: 23,
@@ -77,3 +90,8 @@ var alkiStore = {
   cookiesPurchasedHour: [],
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
 }
+
+
+cookieTally(pikeStore);
+printSales(pikeStore);
+printSales(seaTacStore);
