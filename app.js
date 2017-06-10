@@ -1,5 +1,7 @@
 'use strict';
 
+//functions=====================================================================
+
 function customerNumber(min, max){
   return Math.floor(Math.random() * ((max + 1) - min)) + min;
 }
@@ -52,69 +54,90 @@ function printSales(store){
     listEl.appendChild(listItemEl);
     listItemEl.textContent = store.hoursOpen[i] + ': ' + store.cookiesPurchasedHour[i] + ' cookies';
   }
-  
+
   var listItemEl = document.createElement('li');
   listEl.appendChild(listItemEl);
   listItemEl.textContent = 'Total: ' + store.totalCookies + ' cookies';
 }
 
-
-
-var pikeStore = {
-  storeLocation: '1st and Pike',
-  minCustomersHour: 23,
-  maxCustomersHour: 65,
-  averageCustomerHour: 0,
-  averageCustomerCookies: 6.3,
-  cookiesPurchasedHour: [],
-  totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
+function NewStore(storeLocation, minCustomersHour, maxCustomersHour, averageCustomerCookies){
+  this.storeLocation = storeLocation;
+  this.minCustomersHour = minCustomersHour;
+  this.maxCustomersHour = maxCustomersHour;
+  this.averageCustomerCookies = averageCustomerCookies;
+  this.averageCustomerHour = 0;
+  this.cookiesPurchasedHour = [];
+  this.totalCookies = 0;
+  this.hoursOpen = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+  allStores.push(this);
 }
 
-var seaTacStore = {
-  storeLocation: 'SeaTac Airport',
-  minCustomersHour: 3,
-  maxCustomersHour: 24,
-  averageCustomerHour: 0,
-  averageCustomerCookies: 1.2,
-  cookiesPurchasedHour: [],
-  totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
-}
+//variables=====================================================================
 
-var seattleCenterStore = {
-  storeLocation: 'Seattle Center',
-  minCustomersHour: 11,
-  maxCustomersHour: 38,
-  averageCustomerHour: 0,
-  averageCustomerCookies: 3.7,
-  cookiesPurchasedHour: [],
-  totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
-}
+var allStores = [];
 
-var capitolHillStore = {
-  storeLocation: 'Capitol Hill',
-  minCustomersHour: 20,
-  maxCustomersHour: 38,
-  averageCustomerHour: 0,
-  averageCustomerCookies: 2.3,
-  cookiesPurchasedHour: [],
-  totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
-}
+var pikeStore = new NewStore('1st and Pike', 23, 65, 6.3);
+var seaTacStore = new NewStore('SeaTac Airport', 3, 24, 1.2);
+var seattleCenterStore = new NewStore('Seattle Center', 11, 38, 3.7);
+var capitolHillStore = new NewStore('Capitol Hill', 20, 38, 2.3);
+var alkiStore = new NewStore('Alki', 2, 16, 4.6);
+console.log(allStores);
 
-var alkiStore = {
-  storeLocation: 'Alki',
-  minCustomersHour: 2,
-  maxCustomersHour: 16,
-  averageCustomerHour: 0,
-  averageCustomerCookies: 4.6,
-  cookiesPurchasedHour: [],
-  totalCookies: 0,
-  hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
-}
-
-var allStores = [pikeStore, seaTacStore, seattleCenterStore, capitolHillStore, alkiStore];
+// var pikeStore = {
+//   storeLocation: '1st and Pike',
+//   minCustomersHour: 23,
+//   maxCustomersHour: 65,
+//   averageCustomerHour: 0,
+//   averageCustomerCookies: 6.3,
+//   cookiesPurchasedHour: [],
+//   totalCookies: 0,
+//   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
+// }
+//
+// var seaTacStore = {
+//   storeLocation: 'SeaTac Airport',
+//   minCustomersHour: 3,
+//   maxCustomersHour: 24,
+//   averageCustomerHour: 0,
+//   averageCustomerCookies: 1.2,
+//   cookiesPurchasedHour: [],
+//   totalCookies: 0,
+//   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
+// }
+//
+// var seattleCenterStore = {
+//   storeLocation: 'Seattle Center',
+//   minCustomersHour: 11,
+//   maxCustomersHour: 38,
+//   averageCustomerHour: 0,
+//   averageCustomerCookies: 3.7,
+//   cookiesPurchasedHour: [],
+//   totalCookies: 0,
+//   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
+// }
+//
+// var capitolHillStore = {
+//   storeLocation: 'Capitol Hill',
+//   minCustomersHour: 20,
+//   maxCustomersHour: 38,
+//   averageCustomerHour: 0,
+//   averageCustomerCookies: 2.3,
+//   cookiesPurchasedHour: [],
+//   totalCookies: 0,
+//   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
+// }
+//
+// var alkiStore = {
+//   storeLocation: 'Alki',
+//   minCustomersHour: 2,
+//   maxCustomersHour: 16,
+//   averageCustomerHour: 0,
+//   averageCustomerCookies: 4.6,
+//   cookiesPurchasedHour: [],
+//   totalCookies: 0,
+//   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
+// }
+//
+// var allStores = [pikeStore, seaTacStore, seattleCenterStore, capitolHillStore, alkiStore];
 
 cookieTallyAll();
