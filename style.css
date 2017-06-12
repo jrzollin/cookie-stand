@@ -53,6 +53,8 @@ section {
   border-radius: 10px;
   float: right;
   margin-right: 20px;
+  font-family: arial, sans-serif;
+  color: black;
 }
 
 #testimonials {
@@ -68,12 +70,14 @@ section {
   text-indent: 20px;
   font-family: 'Yellowtail', cursive;
   font-size: 30px;
+  color: green;
 }
 
 #about-content {
   margin: 20px 10px;
   text-indent: 20px;
   font-family: georgia, serif;
+  color: blue;
 }
 
 #hours {
