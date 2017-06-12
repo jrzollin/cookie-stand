@@ -1,13 +1,47 @@
-.store {
+/*.store {
   border: 2px solid black;
   width: 200px;
   margin: 10px;
   display: inline-block;
   padding: 10px;
+}*/
+
+body {
+  background-image: url("aq.jpg");
 }
 
-h3 {
-  margin: auto;
-  border-bottom: 1px solid black;
+#background {
+  background-color: salmon;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+h1 {
+  margin:auto;
+  width: 300px;
   text-align: center;
+  background-color: white;
+}
+
+table {
+  text-align: right;
+  margin: auto;
+  background-color: white;
+}
+
+th {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+th, td {
+  padding: 2px;
+}
+
+tr:hover {
+  background-color: lightblue;
 }

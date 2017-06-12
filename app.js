@@ -73,24 +73,28 @@ function printSales(store){
 }
 
 function printHourAllStore(){
-  //create row
+  //create footer
+  var footEl = document.createElement('tfoot');
+  tableEl.appendChild(footEl);
+
+  //create rowE
   var rowEl = document.createElement('tr');
-  tableBodyEl.appendChild(rowEl);
+  footEl.appendChild(rowEl);
 
   //create total columnTotal
-  var column1El = document.createElement('td');
+  var column1El = document.createElement('th');
   column1El.textContent = 'Totals';
   rowEl.appendChild(column1El);
 
   //create hourly totals for all stores
   for(var i = 0; i < totalHourAll.length; i++){
-    var newColumn = document.createElement('td');
+    var newColumn = document.createElement('th');
     newColumn.textContent = totalHourAll[i];
     rowEl.appendChild(newColumn);
   }
 
   //pring total all
-  var columnTotal = document.createElement('td');
+  var columnTotal = document.createElement('th');
   columnTotal.textContent = totalAll;
   rowEl.appendChild(columnTotal);
 }
