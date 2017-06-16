@@ -10,7 +10,6 @@ function NewStore(storeLocation, minCustomersHour, maxCustomersHour, averageCust
   this.cookiesPurchasedHour = [];
   this.totalCookies = 0;
   this.cookiesPerHour();
-  // this.cookiesTotal();
   allStores.push(this);
 }
 
@@ -31,14 +30,95 @@ NewStore.prototype.cookiesPerHour = function(){
   }
 }
 
+function allStoresHourTotal(store){
+  for(var i = 0; i < store.hoursOpen.length; i++){
+    totalHourAll[i] = totalHourAll[i] + store.cookiesPurchasedHour[i];
+    console.log('Total cookies purchased across all stores for hour ' + (i +1) + ' = ' + totalHourAll[i]);
+  }
+}
+
+function dailyTotalAll(store){
+  // for(var i = 0; i < allStores.length; i++);{
+    totalAll = totalAll + store.totalCookies;
+  }
+//}
+
 function customerNumber(min, max){
   return Math.floor(Math.random() * ((max + 1) - min)) + min;
 }
 
-var allStores = [];
-var pikeStore = new NewStore('1st and Pike', 23, 65, 6.3);
-console.log(allStores);
+function printSales(store){
+  //create row
+  var rowEl = document.createElement('tr');
+  tableBodyEl.appendChild(rowEl);
+
+  //create location column
+  var column1El = document.createElement('td');
+  column1El.textContent = store.storeLocation;
+  rowEl.appendChild(column1El);
+
+  //create hourly totals columns
+  for(var i = 0; i < store.hoursOpen.length; i++){
+    var newColumn = document.createElement('td');
+    newColumn.textContent = store.cookiesPurchasedHour[i];
+    rowEl.appendChild(newColumn);
+  }
+
+  //create store total columns
+  var columnTotal = document.createElement('td');
+  columnTotal.textContent = store.totalCookies;
+  rowEl.appendChild(columnTotal);
+}
+
+function printHourAllStore(){
+  //create footer
+  var footEl = document.createElement('tfoot');
+  tableEl.appendChild(footEl);
+
+  //create rowE
+  var rowEl = document.createElement('tr');
+  footEl.appendChild(rowEl);
+
+  //create total columnTotal
+  var column1El = document.createElement('th');
+  column1El.textContent = 'Totals';
+  rowEl.appendChild(column1El);
+
+  //create hourly totals for all stores
+  for(var i = 0; i < totalHourAll.length; i++){
+    var newColumn = document.createElement('th');
+    newColumn.textContent = totalHourAll[i];
+    rowEl.appendChild(newColumn);
+  }
+
+  //pring total all
+  var columnTotal = document.createElement('th');
+  columnTotal.textContent = totalAll;
+  rowEl.appendChild(columnTotal);
+}
 
 var tableEl = document.getElementById('cookie-table');
 var tableBodyEl = document.createElement('tbody');
 tableEl.appendChild(tableBodyEl);
+
+var allStores = [];
+var totalHourAll = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var totalAll = 0;
+
+var pikeStore = new NewStore('1st and Pike', 23, 65, 6.3);
+var seaTacStore = new NewStore('SeaTac Airport', 3, 24, 1.2);
+var seattleCenterStore = new NewStore('Seattle Center', 11, 38, 3.7);
+var capitolHillStore = new NewStore('Capitol Hill', 20, 38, 2.3);
+var alkiStore = new NewStore('Alki', 2, 16, 4.6);
+console.log(allStores);
+
+
+
+
+for(var i = 0; i < allStores.length; i++){
+  printSales(allStores[i]);
+  allStoresHourTotal(allStores[i]);
+  dailyTotalAll(allStores[i]);
+}
+
+printHourAllStore();
