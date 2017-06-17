@@ -43,7 +43,7 @@ function dailyTotalAll(store){
 
 
 function customerNumber(min, max){
-  return Math.floor(Math.random() * ((max + 1) - min)) + min;
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function printSales(store){
