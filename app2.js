@@ -33,7 +33,7 @@ NewStore.prototype.cookiesPerHour = function(){
 function allStoresHourTotal(store){
   for(var i = 0; i < store.hoursOpen.length; i++){
     totalHourAll[i] = totalHourAll[i] + store.cookiesPurchasedHour[i];
-    console.log('Total cookies purchased across all stores for hour ' + (i +1) + ' = ' + totalHourAll[i]);
+    console.log('Total cookies purchased across all stores for hour ' + (i + 1) + ' = ' + totalHourAll[i]);
   }
 }
 
@@ -43,8 +43,12 @@ function dailyTotalAll(store){
 
 
 function customerNumber(min, max){
+  console.log(max - min + 1);
+  console.log((max + 1) - min);
+  console.log((max - min) + 1);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 
 function printSales(store){
   //create row
@@ -112,15 +116,15 @@ function handleSubmit(event){
   //console.log(Math.floor(Math.random() * ((65 + 1) - 23)) + 23);
 
   var storeLocation = event.target.storeLocation.value;
-  var minCustomersHour = event.target.minCustomer.value;
-  var maxCustomersHour = event.target.maxCustomer.value;
-  var averageCustomerCookies = event.target.avgSale.value;
+  var minCustomersHour = parseInt(event.target.minCustomer.value);
+  var maxCustomersHour = parseInt(event.target.maxCustomer.value);
+  var averageCustomerCookies = parseInt(event.target.avgSale.value);
   console.log(event.target.minCustomer.value);
   console.log(event.target.maxCustomer.value);
   console.log(event.target.avgSale.value);
   var newStore = new NewStore(storeLocation, minCustomersHour, maxCustomersHour, averageCustomerCookies);
   console.log(allStores);
-  run();
+  printStore();
 }
 
 
@@ -133,7 +137,7 @@ function handleSubmit(event){
 
 
 
-function run(){
+function ruprintStoren(){
   for(var i = 0; i < allStores.length; i++){
     printSales(allStores[i]);
     allStoresHourTotal(allStores[i]);
