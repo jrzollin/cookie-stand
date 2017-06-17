@@ -38,7 +38,6 @@ function allStoresHourTotal(store){
 }
 
 function dailyTotalAll(store){
-
     totalAll = totalAll + store.totalCookies;
 }
 
@@ -91,7 +90,7 @@ function printHourAllStore(){
     rowEl.appendChild(newColumn);
   }
 
-  //pring total all
+  //print total all
   var columnTotal = document.createElement('th');
   columnTotal.textContent = totalAll;
   rowEl.appendChild(columnTotal);
@@ -106,36 +105,40 @@ var totalHourAll = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var totalAll = 0;
 
 var formEl = document.getElementById('form');
-
 formEl.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event){
   event.preventDefault();
+  //console.log(Math.floor(Math.random() * ((65 + 1) - 23)) + 23);
 
   var storeLocation = event.target.storeLocation.value;
-  var minCustomer = event.target.minCustomer.value;
-  var maxCustomer = event.target.maxCustomer.value;
-  var avgSale = event.target.avgSale.value;
-
-  var newStore = new NewStore(storeLocation, minCustomer, maxCustomer, avgSale);
-
+  var minCustomersHour = event.target.minCustomer.value;
+  var maxCustomersHour = event.target.maxCustomer.value;
+  var averageCustomerCookies = event.target.avgSale.value;
+  console.log(event.target.minCustomer.value);
+  console.log(event.target.maxCustomer.value);
+  console.log(event.target.avgSale.value);
+  var newStore = new NewStore(storeLocation, minCustomersHour, maxCustomersHour, averageCustomerCookies);
+  console.log(allStores);
+  run();
 }
 
 
-var pikeStore = new NewStore('1st and Pike', 23, 65, 6.3);
-var seaTacStore = new NewStore('SeaTac Airport', 3, 24, 1.2);
-var seattleCenterStore = new NewStore('Seattle Center', 11, 38, 3.7);
-var capitolHillStore = new NewStore('Capitol Hill', 20, 38, 2.3);
-var alkiStore = new NewStore('Alki', 2, 16, 4.6);
-console.log(allStores);
+// var pikeStore = new NewStore('1st and Pike', 23, 65, 6.3);
+// var seaTacStore = new NewStore('SeaTac Airport', 3, 24, 1.2);
+// var seattleCenterStore = new NewStore('Seattle Center', 11, 38, 3.7);
+// var capitolHillStore = new NewStore('Capitol Hill', 20, 38, 2.3);
+// var alkiStore = new NewStore('Alki', 2, 16, 4.6);
+// console.log(allStores);
 
 
 
+function run(){
+  for(var i = 0; i < allStores.length; i++){
+    printSales(allStores[i]);
+    allStoresHourTotal(allStores[i]);
+    dailyTotalAll(allStores[i]);
+  }
 
-for(var i = 0; i < allStores.length; i++){
-  printSales(allStores[i]);
-  allStoresHourTotal(allStores[i]);
-  dailyTotalAll(allStores[i]);
+  printHourAllStore();
 }
-
-printHourAllStore();

@@ -91,7 +91,7 @@ function printHourAllStore(){
     rowEl.appendChild(newColumn);
   }
 
-  //pring total all
+  //print total all
   var columnTotal = document.createElement('th');
   columnTotal.textContent = totalAll;
   rowEl.appendChild(columnTotal);
