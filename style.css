@@ -48,7 +48,7 @@ section {
 
 #storeInfo {
   width: 20%;
-  height: 480px;
+  height: 570px;
   margin-top: 30px;
   border-radius: 10px;
   float: right;
@@ -70,18 +70,20 @@ section {
   text-indent: 20px;
   font-family: 'Yellowtail', cursive;
   font-size: 30px;
-  color: green;
 }
 
 #about-content {
   margin: 20px 10px;
   text-indent: 20px;
   font-family: georgia, serif;
-  color: blue;
+}
+
+#email {
+  margin: 10px;
 }
 
 #hours {
-  margin: 5px;
+  margin: 10px;
   font-weight: bold;
 }
 
