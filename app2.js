@@ -134,13 +134,15 @@ function handleSubmit(event){
 }
 
 
-// var pikeStore = new NewStore('1st and Pike', 23, 65, 6.3);
-// var seaTacStore = new NewStore('SeaTac Airport', 3, 24, 1.2);
-// var seattleCenterStore = new NewStore('Seattle Center', 11, 38, 3.7);
-// var capitolHillStore = new NewStore('Capitol Hill', 20, 38, 2.3);
-// var alkiStore = new NewStore('Alki', 2, 16, 4.6);
+var pikeStore = new NewStore('1st and Pike', 23, 65, 6.3);
+var seaTacStore = new NewStore('SeaTac Airport', 3, 24, 1.2);
+var seattleCenterStore = new NewStore('Seattle Center', 11, 38, 3.7);
+var capitolHillStore = new NewStore('Capitol Hill', 20, 38, 2.3);
+var alkiStore = new NewStore('Alki', 2, 16, 4.6);
 // console.log(allStores);
-
+for(var i = 0; i < allStores.length; i++){
+  printStore(allStores[i]);
+}
 
 function printStore(newStore){
   printSales(newStore);

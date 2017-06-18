@@ -31,15 +31,37 @@ table {
   text-align: right;
   margin: auto;
   background-color: white;
+  border-spacing: 0px;
+  border-collapse: collapse;
 }
 
-th {
-  border-top: 1px solid black;
+.title {
+  float: left;
+  width: 200px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.form-input {
+  margin: 10px;
+  width: 400px;
   border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+#submit {
+  margin-left: 150px;
+}
+
+#form {
+  width: 40%;
+  margin-left: 20px;
 }
 
 th, td {
   padding: 2px;
+  border: 1px solid black;
+  padding: 5px;
 }
 
 tr:hover {
